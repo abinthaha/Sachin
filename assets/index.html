@@ -10,13 +10,16 @@
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
 </head>
 <body ng-app='sachin' ng-controller='dataCtrl'>
 	<header>
 
 	</header>
 	<main>
-		{{tableData.length}} :: {{checkVar}}
+		<div class="ajax_loader" ng-if="showLoader">
+			<img src="../assets/img/ajax_loader.gif">
+		</div>
 		<table id="table_container">
 				<thead>
 		            <tr>
@@ -35,7 +38,6 @@
 					</tr>
 		        </thead>
 				<tbody>
-					{{tableData.length}}
 					<tr ng-repeat="data in tableData">
 						<td>{{data.batting_score}}</td>
 						<td>{{data.wickets}}</td>

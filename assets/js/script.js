@@ -1,18 +1,20 @@
 'use strict';
 
 angular.module('sachin', [])
-.controller('dataCtrl', ['$scope',
-	function ($scope) {
+.controller('dataCtrl', ['$scope', '$http',
+	function ($scope, $http) {
 		$scope.tableData = [];
 		$scope.checkVar = false;
 
-		$.getJSON('../assets/json/sachin.json', function(data) {
-		    window.setTimeout(function(){
-		    	$scope.tableData = angular.copy(data);
-		    })
-		    console.log($scope.tableData);
-		    $scope.checkVar = true;
-		 	$('#table_container').DataTable();
+		$scope.showLoader = true;
+		$http.get('json/sachin.json').success(function(data){
+			$scope.tableData = data;
+            console.log($scope.tableData);
+			$('#table_container').DataTable({});
+			$scope.showLoader = false;
 		});
+		$scope.$watch('tableData', function(newValue, oldValue){
+			$scope.showLoader = false;
+		})
 	}
-])
+])	
