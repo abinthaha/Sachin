@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sachin Tendulkar</title>
+	<!-- Plugin JS -->
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js" type=""></script>
+	<script src="../assets/js/script.js" type=""></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+</head>
+<body ng-app='sachin' ng-controller='dataCtrl'>
+	<header>
+
+	</header>
+	<main>
+		{{tableData.length}} :: {{checkVar}}
+		<table id="table_container">
+				<thead>
+		            <tr>
+						<th>Batting Score</th>
+						<th>Wickets</th>
+						<th>Runs Conceded</th>
+						<th>Catches</th>
+						<th>Stumps</th>
+						<th>Opposition</th>
+						<th>Ground</th>
+						<th>Date</th>
+						<th>Match Result</th>
+						<th>Result Margin</th>
+						<th>Toss</th>
+						<th>Batting Innings</th>
+					</tr>
+		        </thead>
+				<tbody>
+					{{tableData.length}}
+					<tr ng-repeat="data in tableData">
+						<td>{{data.batting_score}}</td>
+						<td>{{data.wickets}}</td>
+						<td>{{data.runs_conceded}}</td>
+						<td>{{data.catches}}</td>
+						<td>{{data.stumps}}</td>
+						<td>{{data.opposition}}</td>
+						<td>{{data.ground}}</td>
+						<td>{{data.date}}</td>
+						<td>{{data.match_result}}</td>
+						<td>{{data.result_margin}}</td>
+						<td>{{data.toss}}</td>
+						<td>{{data.batting_innings}}</td>
+					</tr>
+				</tbody>
+			</table>
+	</main>
+	<footer>
+		
+	</footer>
+</body>	
+</html>
