@@ -10,9 +10,9 @@ angular.module('sachin', [])
 		$http.get('assets/json/sachin.json').success(function(data){
 			$scope.tableData = data;
             console.log($scope.tableData);
-			$('#table_container').DataTable({});
 			$scope.showLoader = false;
 		});
+
 		$scope.$watch('tableData', function(newValue, oldValue){
 			$scope.showLoader = false;
 		})

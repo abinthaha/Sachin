@@ -5,53 +5,78 @@
 	<!-- Plugin JS -->
 	<script src="assets/plugins/jquery-2.2.1.js"></script>
 	<script src="assets/plugins/angular.min.js"></script>
+	<script src='https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js'></script>
 	<script src="assets/js/script.js" type=""></script>
 
 	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 </head>
 <body ng-app='sachin' ng-controller='dataCtrl'>
 	<header>
-
+		<span>Sachin Tendulkar</span>
+		<nav>
+			<ul>
+				<li>
+					<a href="#home_div">Home</a>
+				</li>
+				<li>
+					<a href="#table_container">Table</a>
+				</li>
+				<li>
+					<a href="">Gallery</a>
+				</li>
+				<li>
+					<a href="">About Me</a>
+				</li>
+			</ul>
+		</nav>
 	</header>
 	<main>
+		<div id="home_div">
+			<div class="detail_container">
+				<span></span>
+			</div>
+		</div>
 		<div class="ajax_loader" ng-if="showLoader">
 			<img src="assets/img/ajax_loader.gif">
 		</div>
-		<table id="table_container">
-				<thead>
-		            <tr>
-						<th>Batting Score</th>
-						<th>Wickets</th>
-						<th>Runs Conceded</th>
-						<th>Catches</th>
-						<th>Stumps</th>
-						<th>Opposition</th>
-						<th>Ground</th>
-						<th>Date</th>
-						<th>Match Result</th>
-						<th>Result Margin</th>
-						<th>Toss</th>
-						<th>Batting Innings</th>
-					</tr>
-		        </thead>
-				<tbody>
-					<tr ng-repeat="data in tableData">
-						<td>{{data.batting_score}}</td>
-						<td>{{data.wickets}}</td>
-						<td>{{data.runs_conceded}}</td>
-						<td>{{data.catches}}</td>
-						<td>{{data.stumps}}</td>
-						<td>{{data.opposition}}</td>
-						<td>{{data.ground}}</td>
-						<td>{{data.date}}</td>
-						<td>{{data.match_result}}</td>
-						<td>{{data.result_margin}}</td>
-						<td>{{data.toss}}</td>
-						<td>{{data.batting_innings}}</td>
-					</tr>
-				</tbody>
-			</table>
+		<div ag-grid="gridOptions" class="ag-fresh" style="height: 100%;"></div>
+		<table id="table_container" class="display" cellspacing="0" width="100%">
+			<thead>
+	            <tr>
+					<th>Batting Score</th>
+					<th>Wickets</th>
+					<th>Runs Conceded</th>
+					<th>Catches</th>
+					<th>Stumps</th>
+					<th>Opposition</th>
+					<th>Ground</th>
+					<th>Date</th>
+					<th>Match Result</th>
+					<th>Result Margin</th>
+					<th>Toss</th>
+					<th>Batting Innings</th>
+				</tr>
+	        </thead>
+			<tbody>
+				<tr ng-repeat="data in tableData">
+					<td>{{data.batting_score}}</td>
+					<td>{{data.wickets}}</td>
+					<td>{{data.runs_conceded}}</td>
+					<td>{{data.catches}}</td>
+					<td>{{data.stumps}}</td>
+					<td>{{data.opposition}}</td>
+					<td>{{data.ground}}</td>
+					<td>{{data.date}}</td>
+					<td>{{data.match_result}}</td>
+					<td>{{data.result_margin}}</td>
+					<td>{{data.toss}}</td>
+					<td>{{data.batting_innings}}</td>
+				</tr>
+			</tbody>
+		</table>
 	</main>
 	<footer>
 
