@@ -5,6 +5,7 @@
 	<!-- Plugin JS -->
 	<script src="assets/plugins/jquery-2.2.1.js"></script>
 	<script src="assets/plugins/angular.min.js"></script>
+	<script src="assets/plugins/underscore.js"></script>
 	<script src='https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js'></script>
 	<script src="assets/js/script.js" type=""></script>
 
@@ -17,18 +18,15 @@
 	<header>
 		<span>Sachin Tendulkar</span>
 		<nav>
-			<ul>
+			<ul id="page_load">
 				<li>
-					<a href="#home_div">Home</a>
+					<a href="" id="home">Home</a>
 				</li>
 				<li>
-					<a href="#table_container">Table</a>
+					<a href="" id="table" ng-show="showTable">Table</a>
 				</li>
 				<li>
-					<a href="">Gallery</a>
-				</li>
-				<li>
-					<a href="">About Me</a>
+					<a href="" id="result">Result</a>
 				</li>
 			</ul>
 		</nav>
@@ -38,12 +36,14 @@
 			<div class="detail_container">
 				<span></span>
 			</div>
+			<div class="show_table_div">
+				<span ng-click="showTable = ! showTable">Show Table</span>
+			</div>
 		</div>
 		<div class="ajax_loader" ng-if="showLoader">
 			<img src="assets/img/ajax_loader.gif">
 		</div>
-		<div ag-grid="gridOptions" class="ag-fresh" style="height: 100%;"></div>
-		<table id="table_container" class="display" cellspacing="0" width="100%">
+		<table id="table_container" class="display" cellspacing="0" width="100%" ng-show="showTable">
 			<thead>
 	            <tr>
 					<th>Batting Score</th>
@@ -60,8 +60,9 @@
 					<th>Batting Innings</th>
 				</tr>
 	        </thead>
+
 			<tbody>
-				<tr ng-repeat="data in tableData">
+				<tr ng-repeat="data in tableData | limitTo : cellNumber">
 					<td>{{data.batting_score}}</td>
 					<td>{{data.wickets}}</td>
 					<td>{{data.runs_conceded}}</td>
@@ -77,6 +78,9 @@
 				</tr>
 			</tbody>
 		</table>
+		<div id="results">
+			The End
+		</div>
 	</main>
 	<footer>
 
