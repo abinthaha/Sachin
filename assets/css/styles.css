@@ -106,6 +106,7 @@ header nav ul li a:hover {
 }
 #results {
 	height: 700px;
+	padding-top: 100px;
 	background:  linear-gradient(135deg, rgba(224,0,0,1) 0%, rgba(255,161,102,1) 100%);
 }
 .show_table_div {
@@ -122,4 +123,47 @@ header nav ul li a:hover {
 }
 .show_table_div span:hover{
 	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.results_buttons_div {
+	text-align: center;
+}
+.results_buttons_div ul li {
+	list-style-type: none;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid wheat;
+	cursor: pointer;
+	display: inline;
+	color: white
+}
+.results_buttons_div ul li:hover {
+	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.results_textbox {
+	text-align: center;
+	margin-top: 50px;
+}
+.results_textbox input {
+	border: 1px solid yellow;
+	height: 30px;
+	border-radius: 7px;
+	width: 20%;
+	margin: 10px;
+	font-size: 20px;
+	outline: none;
+	padding: 2px 10px;
+}
+.about_sachin ul li{
+	list-style-type: none;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	font-size: 16px;
+	color: white;
+}
+.about_sachin ul li label {
+	display: inline-block;
+	width: 30%;
+}
+.about_sachin ul li span {
+	display: inline-block;
+	width: 20%;
 }
