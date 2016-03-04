@@ -3,14 +3,12 @@
 <head>
 	<title>Sachin Tendulkar</title>
 	<!-- Plugin JS -->
-	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js" type=""></script>
-	<script src="../assets/js/script.js" type=""></script>
+	<script src="assets/plugins/jquery-2.2.1.js"></script>
+	<script src="assets/plugins/angular.min.js"></script>
+	<script src="assets/js/script.js" type=""></script>
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 <body ng-app='sachin' ng-controller='dataCtrl'>
 	<header>
@@ -18,7 +16,7 @@
 	</header>
 	<main>
 		<div class="ajax_loader" ng-if="showLoader">
-			<img src="../assets/img/ajax_loader.gif">
+			<img src="assets/img/ajax_loader.gif">
 		</div>
 		<table id="table_container">
 				<thead>
@@ -56,7 +54,7 @@
 			</table>
 	</main>
 	<footer>
-		
+
 	</footer>
-</body>	
+</body>
 </html>

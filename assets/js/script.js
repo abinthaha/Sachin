@@ -7,7 +7,7 @@ angular.module('sachin', [])
 		$scope.checkVar = false;
 
 		$scope.showLoader = true;
-		$http.get('json/sachin.json').success(function(data){
+		$http.get('assets/json/sachin.json').success(function(data){
 			$scope.tableData = data;
             console.log($scope.tableData);
 			$('#table_container').DataTable({});
@@ -17,4 +17,4 @@ angular.module('sachin', [])
 			$scope.showLoader = false;
 		})
 	}
-])	
+])
